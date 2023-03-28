@@ -1,0 +1,29 @@
+<%- include('../template/header.ejs'); -%>
+<div class="container mt-5">
+<div class="row d-flex justify-content-center">
+    <p class="display-6 text-center">CONNECTEZ-VOUS</p>
+    <div class="col-md-7">
+        <% if (locals.error) { %>
+            <div class="alert alert-danger text-center">
+             Identifiant Incorrect!!!
+            </div>
+         <% } %>
+        <form action="/" method="post">
+            <div class="mb-3">
+                <label for="email">EMAIL:</label>
+                <input type="email" name="email" id="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="pass">MOT DE PASSE:</label>
+                <input type="password" name="pass" id="pass" class="form-control">
+            </div>
+            <p class="text-center my-3">
+                <a href="/register">Inscription</a>
+            </p>
+            <button type="submit" class="btn btn-primary w-100" style="border-radius: 50px;">Connexion</button>
+        </form>
+    </div>
+</div>
+</div>
+
+<%- include('../template/footer.ejs'); -%>

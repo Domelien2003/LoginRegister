@@ -1,0 +1,43 @@
+<%- include('../template/header.ejs'); -%>
+<div class="container mt-5">
+<div class="row d-flex justify-content-center">
+    <p class="display-6 text-center">CREER UN COMPTE</p>
+    <div class="col-md-7">
+        <% if (locals.error) { %>
+           <div class="alert alert-danger text-center">
+            Tous Les Champs sont Obligatoires!!!
+           </div>
+        <% } %>
+        <% if (locals.succes) { %>
+            <div class="alert alert-success text-center">
+             Compte Creer Avec Succes <br>
+             Vous Pouvez Maintenant Vous Connecter!!!
+            </div>
+         <% } %>
+        <form action="/register" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="nom">USERNAME:</label>
+                <input type="text" name="nom" id="nom" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="email">EMAIL:</label>
+                <input type="email" name="email" id="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="pass">MOT DE PASSE:</label>
+                <input type="password" name="pass" id="pass" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="file">PHOTO DE PROFIL:</label>
+                <input type="file" name="file" id="file" class="form-control">
+            </div>
+            <p class="text-center my-3">
+                <a href="/">Connexion</a>
+            </p>
+            <button type="submit" class="btn btn-primary w-100" style="border-radius: 50px;">Inscription</button>
+        </form>
+    </div>
+</div>
+</div>
+
+<%- include('../template/footer.ejs'); -%>
